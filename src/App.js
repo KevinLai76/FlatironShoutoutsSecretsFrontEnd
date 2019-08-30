@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ShoutoutsPage from './ShoutoutsPage';
+import Form from './Form'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  state = {
+    whichForm: ""
+  }
+
+  handleRenderForms = (event) => {
+    debugger
+
+  }
+
+  render() {
+    // switch(this.state.whichForm) {
+    //   case 'Login':
+    //     return <Form />
+    //   case 'Sign Up':
+    //     return <Form />
+    //   default:
+    //     return <ShoutoutsPage />
+    // }
+    
+
+    return (
+      <div className="App">
+
+        <div className="Nav">
+          <h1>Flatiron Shoutouts</h1>
+          <button onClick={this.handleRenderForms}>Login</button>
+          <button onClick={this.handleRenderForms}>Sign Up</button>
+        </div>
+
+        <ShoutoutsPage />
+      </div>
+    );
+  };
 }
 
 export default App;
