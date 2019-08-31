@@ -3,10 +3,19 @@ import './App.css';
 
 class Form extends React.Component {
 
-    state ={
-        username: '',
-        password: '',
-        page: 'Login'
+    // state ={
+    //     username: '',
+    //     password: '',
+    //     page: 'Login'
+    // }
+    constructor(props)
+    {
+        super(props)
+        this.state = {
+            username: "",
+            password: "",
+            page: `${props.formType}`
+        }
     }
 
     handleSubmit = (event) => {

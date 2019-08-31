@@ -6,37 +6,72 @@ import Form from './Form'
 class App extends React.Component {
 
   state = {
-    whichForm: ""
+    formType: '',
+    pageState: ''
   }
 
-  handleRenderForms = (event) => {
-    debugger
+  componentDidMount() {
+     if(localStorage.token) {
+       this.setState({pageState: 'Logged in'})
+     }
+  }
 
+  handleRenderPage = (event) => {
+    if (event.target.name === 'Login') { 
+      this.setState({formType: event.target.name})
+    } else if (event.target.name === 'Sign Up') {
+      this.setState({formType: 'Sign Up'}) 
+    } else if (event.target.name === 'Log Out') {
+      this.setState({pageState: ''})
+      localStorage.clear()
+    }
   }
 
   render() {
-    // switch(this.state.whichForm) {
-    //   case 'Login':
-    //     return <Form />
-    //   case 'Sign Up':
-    //     return <Form />
-    //   default:
-    //     return <ShoutoutsPage />
-    // }
-    
+    if (!this.state.pageState) {
+      switch(this.state.formType) {
+        case 'Login':
+          return (
+            <div>
+                <Form formType={this.state.formType}/>
+            </div>
+          )
+        case 'Sign Up':
+          return (
+            <div>
+              <Form formType={this.state.formType}/>
+            </div>
+          )
+        default:
+          return(
+            <div className="App">
 
-    return (
-      <div className="App">
+              <div className="Nav">
+                <h1>Flatiron Shoutouts</h1>
+                <button name="Login" onClick={this.handleRenderPage}>Login</button>
+                <button name="Sign Up" onClick={this.handleRenderPage}>Sign Up</button>
+              </div>
 
-        <div className="Nav">
-          <h1>Flatiron Shoutouts</h1>
-          <button onClick={this.handleRenderForms}>Login</button>
-          <button onClick={this.handleRenderForms}>Sign Up</button>
+              <ShoutoutsPage />
+            </div>
+
+          )
+      }
+    } else {
+        return (
+          <div className="App">
+
+            <div className="Nav">
+              <h1>Flatiron Shoutouts</h1>
+              <small>Welcome Back!</small>              
+              <button name="Log Out" onClick={this.handleRenderPage}>Log Out</button>
+            </div>
+
+            <ShoutoutsPage />
         </div>
 
-        <ShoutoutsPage />
-      </div>
-    );
+        )
+    }
   };
 }
 
