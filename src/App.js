@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ShoutoutsPage from './ShoutoutsPage';
+import ShoutoutsPage from './Shoutouts/ShoutoutsPage';
 import Form from './Form'
 
 class App extends React.Component {
