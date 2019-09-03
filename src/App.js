@@ -7,12 +7,23 @@ class App extends React.Component {
 
   state = {
     formType: '',
-    pageState: ''
+    pageState: '',
+    currentUserId: 0
   }
 
   componentDidMount() {
      if(localStorage.token) {
        this.setState({pageState: 'Logged in'})
+       fetch('http://localhost:3000/profile', {
+         headers: {
+           'Authorization': localStorage.token
+         }
+       })
+       .then(response => response.json())
+       .then(data => {
+        this.setState({currentUserId: data.id})
+
+       })
      }
   }
 
@@ -32,6 +43,7 @@ class App extends React.Component {
   }
 
   render() {
+    {console.log('current user id: ', this.state.currentUserId)}
     if (!this.state.pageState) {
       switch(this.state.formType) {
         case 'Login':
