@@ -1,9 +1,10 @@
 import React from 'react';
+import ShoutoutsPostContainer from './ShoutoutsPostContainer'
 
 class ShououtsPage extends React.Component {
 
     state = {
-        shoutouts: []
+        shoutouts: [],
     }
 
     componentDidMount() {
@@ -13,11 +14,9 @@ class ShououtsPage extends React.Component {
     }
 
     render() {
-        console.log(this.state.shoutouts)
-        
         return(
             <div>
-                This is the Shououts Page!
+                <ShoutoutsPostContainer shoutouts={this.state.shoutouts}/>
             </div>
         )
     }

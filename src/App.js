@@ -1,19 +1,34 @@
 import React from 'react';
 import './App.css';
-import ShoutoutsPage from './ShoutoutsPage';
+import ShoutoutsPage from './Shoutouts/ShoutoutsPage';
 import Form from './Form'
 
 class App extends React.Component {
 
   state = {
     formType: '',
-    pageState: ''
+    pageState: '',
+    currentUserId: 0
   }
 
   componentDidMount() {
      if(localStorage.token) {
        this.setState({pageState: 'Logged in'})
+       fetch('http://localhost:3000/profile', {
+         headers: {
+           'Authorization': localStorage.token
+         }
+       })
+       .then(response => response.json())
+       .then(data => {
+        this.setState({currentUserId: data.id})
+
+       })
      }
+  }
+
+  redirect = (page) => {
+    this.setState({pageState : page})
   }
 
   handleRenderPage = (event) => {
@@ -28,18 +43,19 @@ class App extends React.Component {
   }
 
   render() {
+    {console.log('current user id: ', this.state.currentUserId)}
     if (!this.state.pageState) {
       switch(this.state.formType) {
         case 'Login':
           return (
             <div>
-                <Form formType={this.state.formType}/>
+                <Form formType={this.state.formType} redirect={this.redirect}/>
             </div>
           )
         case 'Sign Up':
           return (
             <div>
-              <Form formType={this.state.formType}/>
+              <Form formType={this.state.formType} redirect={this.redirect}/>
             </div>
           )
         default:
@@ -68,8 +84,7 @@ class App extends React.Component {
             </div>
 
             <ShoutoutsPage />
-        </div>
-
+          </div>
         )
     }
   };
