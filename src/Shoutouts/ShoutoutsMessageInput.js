@@ -3,11 +3,12 @@ import React from 'react';
 class ShoutoutsMessageInput extends React.Component {
 
     state = {
-        message: "Shout outs to..."
+        message: ''
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
+        console.log(localStorage)
         // fetch('http://localhost:3000/shoutouts', {
         //     method: 'POST',
         //     headers: {
@@ -29,11 +30,10 @@ class ShoutoutsMessageInput extends React.Component {
     }
 
     render() {
-
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='text' name='message' value={this.state.message} onChange={this.handleChange}/>
+                    <textarea rows={4} cols={40} value={this.state.message} onChange={this.handleChange}></textarea>
                     <input type='submit'/>
                 </form>
             </div>

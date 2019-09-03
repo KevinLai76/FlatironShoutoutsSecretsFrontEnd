@@ -5,15 +5,14 @@ import ShoutoutsPost from './ShoutoutsPost'
 class ShoutoutsPostContainer extends React.Component {
 
     renderPosts = () => {
-        // set up REDUX! props are passed down just map through them and pass them 
+        return this.props.shoutouts.map(shoutout => <ShoutoutsPost key={shoutout.id} shoutout={shoutout}/>)
     }
 
     render() {
-
         return(
             <div>
                 <ShoutoutsMessageInput />
-                <ShoutoutsPost />
+                {this.renderPosts()}
             </div>
         )
     }

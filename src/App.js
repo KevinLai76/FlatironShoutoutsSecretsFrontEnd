@@ -16,6 +16,10 @@ class App extends React.Component {
      }
   }
 
+  redirect = (page) => {
+    this.setState({pageState : page})
+  }
+
   handleRenderPage = (event) => {
     if (event.target.name === 'Login') { 
       this.setState({formType: event.target.name})
@@ -33,13 +37,13 @@ class App extends React.Component {
         case 'Login':
           return (
             <div>
-                <Form formType={this.state.formType}/>
+                <Form formType={this.state.formType} redirect={this.redirect}/>
             </div>
           )
         case 'Sign Up':
           return (
             <div>
-              <Form formType={this.state.formType}/>
+              <Form formType={this.state.formType} redirect={this.redirect}/>
             </div>
           )
         default:
@@ -68,8 +72,7 @@ class App extends React.Component {
             </div>
 
             <ShoutoutsPage />
-        </div>
-
+          </div>
         )
     }
   };

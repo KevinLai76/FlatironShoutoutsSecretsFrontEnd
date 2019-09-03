@@ -3,11 +3,6 @@ import './App.css';
 
 class Form extends React.Component {
 
-    // state ={
-    //     username: '',
-    //     password: '',
-    //     page: 'Login'
-    // }
     constructor(props)
     {
         super(props)
@@ -34,6 +29,7 @@ class Form extends React.Component {
         .then(response => response.json())
         .then(data => {
             localStorage.setItem('token', data.token)
+            this.props.redirect('test')
         })
     }
 

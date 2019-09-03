@@ -14,7 +14,6 @@ class ShououtsPage extends React.Component {
     }
 
     render() {
-                
         return(
             <div>
                 <ShoutoutsPostContainer shoutouts={this.state.shoutouts}/>
