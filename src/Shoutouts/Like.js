@@ -2,10 +2,18 @@ import React from 'react';
 
 class Like extends React.Component {
 
+    state = {
+        likes: this.props.shoutout.shoutout_likes.length
+    }
+
     handleClick = () => {
+        this.setState({likes: this.state.likes + 1})
+        this.props.changeTotalLikes()        
+
         fetch('http://localhost:3000/shoutout_likes', {
             method: 'POST',
             headers: {
+                'Authorization': localStorage.token,
                 'Content-Type': 'application/json',
                 'Accepts': 'application/json'
             },
@@ -23,7 +31,9 @@ class Like extends React.Component {
     render() {
         return(
             <div name='likes'>
-                <button onClick={this.handleClick}>Like</button> <small>{this.props.likes.length}</small>
+                <div>
+                    <button onClick={this.handleClick}>Like</button> <small>{this.state.likes}</small>
+                </div>
             </div>
         )
     }

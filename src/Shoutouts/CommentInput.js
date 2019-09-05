@@ -12,7 +12,6 @@ class CommentInput extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(this.props.shoutout.user_id)
         fetch('http://localhost:3000/shoutout_comments', {
             method: 'POST',
             headers: {
@@ -26,7 +25,9 @@ class CommentInput extends React.Component {
             })
         })
         .then(response => response.json())
-        .then(console.log)
+        .then(comment => {
+            this.props.createNewComment(comment)
+        })
     }
 
     render() {

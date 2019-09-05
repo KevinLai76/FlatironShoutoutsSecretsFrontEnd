@@ -6,32 +6,33 @@ import CommentContainer from './CommentContainer'
 class ShoutoutsPost extends React.Component {
 
     state = {
-        likes: this.props.shoutout.shoutout_likes,
-        dislikes: this.props.shoutout.shoutout_dislikes
+        likes: this.props.shoutout.shoutout_likes.length,
+        dislikes: this.props.shoutout.shoutout_dislikes.length
     }
 
-    updateDislikes = (dislike) => {
-        this.setState({dislikes: [...this.state.dislikes, dislike]})
+    changeTotalLikes = () => {
+        this.setState({likes: this.state.likes + 1})
     }
 
-    updateLikes = (like) => {
-        // console.log('new like:', like)
-        // console.log('likes state: ', this.state.likes)
-        this.setState({likes: [...this.state.likes, like]})
+    changeTotalDislikes = () => {
+        this.setState({dislikes: this.state.dislikes + 1})
     }
 
     render() {
+        // console.log('shoutoutsPost props: ', this.props.shoutout)
+        // console.log('shoutoutsPost likes: ', this.state.likes)
+        // console.log('shoutoutsPost dislikes: ', this.state.dislikes)
         return (
             <div>
                 <div name='total_likes'>
-                    <h1>{this.state.likes.length - this.state.dislikes.length}</h1>
+                    <h1>{this.state.likes - this.state.dislikes}</h1>
                 </div>
                 <div name='post_content'>
                     {this.props.shoutout.content}
                 </div>
-                <Like shoutout={this.props.shoutout} updateLikes={this.updateLikes} likes={this.state.likes}/>
-                <Dislike shoutout={this.props.shoutout} updateDislikes={this.updateDislikes} dislikes={this.state.dislikes}/>
-                <CommentContainer shoutout={this.props.shoutout}/>                
+                <Like shoutout={this.props.shoutout} updateLikes={this.props.updateLikes} changeTotalLikes={this.changeTotalLikes}/>
+                <Dislike shoutout={this.props.shoutout} updateDislikes={this.props.updateDislikes} changeTotalDislikes={this.changeTotalDislikes}/>
+                <CommentContainer shoutout={this.props.shoutout} createNewComment={this.props.createNewComment}/>                
             </div>
         )
     }

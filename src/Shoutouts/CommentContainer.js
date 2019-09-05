@@ -5,7 +5,7 @@ import CommentInput from './CommentInput'
 class CommentContainer extends React.Component {
 
     state = {
-        clicked: false
+        clicked: false,
     }
 
     handleClick = () => {
@@ -27,10 +27,9 @@ class CommentContainer extends React.Component {
                         this.state.clicked 
                         ?
                         <div>
-                            <CommentInput shoutout={this.props.shoutout}/>
+                            <CommentInput shoutout={this.props.shoutout} createNewComment={this.props.createNewComment}/>
                             {this.renderComment()}
                         </div>
-
                         :
                         null
                     }

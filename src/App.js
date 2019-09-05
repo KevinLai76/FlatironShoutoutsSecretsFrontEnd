@@ -43,19 +43,18 @@ class App extends React.Component {
   }
 
   render() {
-    {console.log('current user id: ', this.state.currentUserId)}
     if (!this.state.pageState) {
       switch(this.state.formType) {
         case 'Login':
           return (
             <div>
-                <Form formType={this.state.formType} redirect={this.redirect}/>
+                <Form formType={this.state.formType} redirect={this.redirect} setCurrentUser={this.setCurrentUser}/>
             </div>
           )
         case 'Sign Up':
           return (
             <div>
-              <Form formType={this.state.formType} redirect={this.redirect}/>
+              <Form formType={this.state.formType} redirect={this.redirect} setCurrentUser={this.setCurrentUser}/>
             </div>
           )
         default:
