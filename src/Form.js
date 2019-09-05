@@ -28,7 +28,6 @@ class Form extends React.Component {
         })
         .then(response => response.json())
         .then(data => {
-            debugger
             localStorage.setItem('token', data.token)
             this.props.redirect(data, 'test')
         })

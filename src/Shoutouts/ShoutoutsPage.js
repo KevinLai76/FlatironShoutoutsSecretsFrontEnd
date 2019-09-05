@@ -13,10 +13,50 @@ class ShououtsPage extends React.Component {
         .then(data => this.setState({shoutouts: data}))
     }
 
+    updateDislikes = (dislike) => {
+        let newShoutoutsArray = this.state.shoutouts.map(shoutout => {
+            return (
+                shoutout.id === dislike.shoutout_id
+                ?
+                {...shoutout, shoutout_dislikes: [shoutout.shoutout_dislikes, dislike]}
+                :
+                shoutout
+            )
+        })
+        this.setState({shoutouts: newShoutoutsArray})
+    }
+
+    updateLikes = (like) => {
+        let newShoutoutsArray = this.state.shoutouts.map(shoutout => {
+            return (
+                shoutout.id === like.shoutout_id
+                ?
+                {...shoutout, shoutout_likes: [shoutout.shoutout_likes, like]}
+                :
+                shoutout
+            )
+        })
+        this.setState({shoutouts: newShoutoutsArray})
+    }
+
+    createNewComment = (comment) => {
+        let newShoutoutsArray = this.state.shoutouts.map(shoutout => {
+            return (
+                shoutout.id === comment.shoutout_id 
+                ? 
+                {...shoutout, shoutout_comments: [...shoutout.shoutout_comments, comment]} 
+                : 
+                shoutout
+            )
+        })
+        this.setState({shoutouts: newShoutoutsArray})
+    }
+
     render() {
+        // console.log('shoutoutsPage state:', this.state.shoutouts)
         return(
             <div>
-                <ShoutoutsPostContainer shoutouts={this.state.shoutouts}/>
+                <ShoutoutsPostContainer shoutouts={this.state.shoutouts} createNewComment={this.createNewComment} updateLikes={this.updateLikes} updateDislikes={this.updateDislikes}/>
             </div>
         )
     }
