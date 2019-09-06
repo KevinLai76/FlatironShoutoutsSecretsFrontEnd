@@ -9,8 +9,38 @@ class Form extends React.Component {
         this.state = {
             username: "",
             password: "",
+            loginErrors: false,
+            signupErrors: false,
             page: `${props.formType}`
         }
+    }
+
+    userPassValid = (data) => {
+        if (!!data.error) { 
+            this.setState({signupErrors: false})
+            this.setState({loginErrors: true})
+            return null
+        } else if (!!data.errors) {
+            this.setState({loginErrors: false})
+            this.setState({signupErrors: true})
+            return null
+        } else {
+            this.setState({loginErrors: false})
+            this.setState({signupErrors: false})
+            localStorage.setItem('token', data.token)
+            this.updateCurrentUser(data)
+            this.props.history.push('/')
+        }
+    }
+
+    updateCurrentUser = (data) => {
+        fetch('http://localhost:3000/profile', {
+         headers: {
+           'Authorization': localStorage.token
+         }
+       })
+       .then(response => response.json())
+       .then(data => this.props.setCurrentUserId(data))
     }
 
     handleSubmit = (event) => {
@@ -27,10 +57,7 @@ class Form extends React.Component {
             })
         })
         .then(response => response.json())
-        .then(data => {
-            localStorage.setItem('token', data.token)
-            this.props.redirect(data, 'test')
-        })
+        .then(data => this.userPassValid(data))
     }
 
     handleChange = (event) => {
@@ -48,10 +75,11 @@ class Form extends React.Component {
     }
 
     render() {
-
         return(
             <div>
                 <h1>{this.state.page}</h1>
+                {this.state.loginErrors ? <small>Incorrect username or password</small> : null}
+                {this.state.signupErrors ? <small>Invalid username</small> : null}
                 <form>
                     <input type='text' name='username' value={this.state.username} onChange={this.handleChange}/>
                     <input type='password' name='password' value={this.state.password} onChange={this.handleChange}/>

@@ -13,6 +13,11 @@ class ShououtsPage extends React.Component {
         .then(data => this.setState({shoutouts: data}))
     }
 
+    createNewShoutout = (shoutout) => {
+        console.log(shoutout)
+        this.setState({shoutouts: [...this.state.shoutouts, shoutout]})
+    }
+
     updateDislikes = (dislike) => {
         let newShoutoutsArray = this.state.shoutouts.map(shoutout => {
             return (
@@ -53,10 +58,9 @@ class ShououtsPage extends React.Component {
     }
 
     render() {
-        // console.log('shoutoutsPage state:', this.state.shoutouts)
         return(
             <div>
-                <ShoutoutsPostContainer shoutouts={this.state.shoutouts} createNewComment={this.createNewComment} updateLikes={this.updateLikes} updateDislikes={this.updateDislikes}/>
+                <ShoutoutsPostContainer shoutouts={this.state.shoutouts} currentUserId={this.props.currentUserId} createNewShoutout={this.createNewShoutout} createNewComment={this.createNewComment} updateLikes={this.updateLikes} updateDislikes={this.updateDislikes}/>
             </div>
         )
     }
