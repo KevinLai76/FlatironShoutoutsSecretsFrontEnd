@@ -10,8 +10,8 @@ class NavBar extends React.Component {
             this.props.handleSignUp(event.target.name)
             this.props.history.push('./signup')
         } else if (event.target.name === 'Log Out') {
-          this.props.handleLogout()
-          localStorage.clear()
+            this.props.handleLogout()
+            localStorage.clear()
         }
     }
     
@@ -22,7 +22,7 @@ class NavBar extends React.Component {
                     this.props.currentUserId
                     ?
                     <div name='logged in'>
-                        <h1>Flatiron Shoutouts</h1>
+                        <h1>Flatiron {this.props.secret ? 'Secrets' : 'Shoutouts'}</h1>
                         <small>Welcome Back!</small>              
                         <button name="Log Out" onClick={this.handleClick}>Log Out</button>
                     </div>

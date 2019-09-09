@@ -1,11 +1,11 @@
 import React from 'react';
-import Comment from './Comment'
-import CommentInput from './CommentInput'
+import SecretsComment from './SecretsComment';
+import SecretsCommentInput from './SecretsCommentInput';
 
-class CommentContainer extends React.Component {
+class SecretsCommentContainer extends React.Component {
 
     state = {
-        clicked: false,
+        clicked: false
     }
 
     handleClick = () => {
@@ -13,30 +13,30 @@ class CommentContainer extends React.Component {
     }
 
     renderComment = () => {
-        return this.props.shoutout.shoutout_comments.map(comment => <Comment key={comment.id} comment={comment}/>)
+        return this.props.secret.secret_comments.map(comment => <SecretsComment key={comment.id} comment={comment}/>)
     }
 
     render() {
-        return(
+        return (
             <div name='comment_container'>
                 <div name='comments_dropdown' onClick={this.handleClick}>
                     <small>Comments</small>
                 </div>
                 <div>
-                    { 
-                        this.state.clicked 
+                    {
+                        this.state.clicked
                         ?
                         <div>
-                            <CommentInput shoutout={this.props.shoutout} createNewComment={this.props.createNewComment}/>
+                            <SecretsCommentInput secret={this.props.secret} createNewComment={this.props.createNewComment}/>
                             {this.renderComment()}
                         </div>
                         :
                         null
                     }
-                </div> 
+                </div>
             </div>
         )
     }
 }
 
-export default CommentContainer;
+export default SecretsCommentContainer;

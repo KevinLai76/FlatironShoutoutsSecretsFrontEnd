@@ -4,7 +4,7 @@ import ShoutoutsPostContainer from './ShoutoutsPostContainer'
 class ShououtsPage extends React.Component {
 
     state = {
-        shoutouts: [],
+        shoutouts: []
     }
 
     componentDidMount() {
@@ -14,7 +14,6 @@ class ShououtsPage extends React.Component {
     }
 
     createNewShoutout = (shoutout) => {
-        console.log(shoutout)
         this.setState({shoutouts: [...this.state.shoutouts, shoutout]})
     }
 
