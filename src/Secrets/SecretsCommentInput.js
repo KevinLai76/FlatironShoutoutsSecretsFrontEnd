@@ -1,33 +1,28 @@
 import React from 'react';
 
-class CommentInput extends React.Component {
+class SecretsCommentInput extends React.Component {
 
     state = {
-        message: '',
-        error: false
+        message: ""
     }
 
     handleChange = (event) => {
         this.setState({message: event.target.value})
     }
 
-    errorMessage = () => {
-        return <small>Please log in or sign up</small>
-    }
-
     handleSubmit = (event) => {
         event.preventDefault()
         if (localStorage.token) {
-            fetch('http://localhost:3000/shoutout_comments', {
+            fetch('http://localhost:3000/secret_comments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Accepts': 'application/json'
+                    'Accepts': 'applicaton/json'
                 },
                 body: JSON.stringify({
                     'content': this.state.message,
-                    'user_id': this.props.shoutout.user_id,
-                    'shoutout_id': this.props.shoutout.id
+                    'user_id': this.props.secret.user_id,
+                    'secret_id': this.props.secret.id
                 })
             })
             .then(response => response.json())
@@ -35,23 +30,19 @@ class CommentInput extends React.Component {
                 this.props.createNewComment(comment)
                 this.setState({message: ''})
             })
-        } else {
-            this.setState({error: true})
-            setTimeout(() => this.setState({error: false}), 3000)
         }
     }
 
     render() {
-        return(
+        return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <input type='text' name='comment_input' value={this.state.message} onChange={this.handleChange}/>
-                    <input type='submit' />
+                    <input type='submit'/>
                 </form>
-                {this.state.error ? <div>{this.errorMessage()}</div> : null}
             </div>
         )
     }
 }
 
-export default CommentInput;
+export default SecretsCommentInput;
