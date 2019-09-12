@@ -1,4 +1,5 @@
 import React from 'react';
+import TacoEmoji from '../Images/taco_emoji.png'
 
 class ShoutoutsMessageInput extends React.Component {
 
@@ -45,11 +46,17 @@ class ShoutoutsMessageInput extends React.Component {
     render() {
         return(
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type='text' name='shoutoutInput' value={this.state.message} onChange={this.handleChange}/>
-                    <input type='submit'/>
-                </form>
-                {this.state.error ? <div>{this.errorMessage()}</div> : null}
+                <div className='Shoutouts-Post-Form'>
+                    <img alt='' className='User-Icon' src={TacoEmoji}/>
+                    <form  onSubmit={this.handleSubmit}>
+                        {/* <input className='Shoutouts-Post-Input-Field' type='text' name='shoutoutInput' value={this.state.message} onChange={this.handleChange}/><br/> */}
+                        <textarea className='Shoutouts-Post-Input-Field' type='text' name='shoutoutInput' value={this.state.message} onChange={this.handleChange} onSubmit={this.handleSubmit}/><br/>
+                        <input value='Post' type='submit'/>
+                    </form>
+                </div>
+                <div className='Shoutouts-Error-Message'>
+                    {this.state.error ? <div>{this.errorMessage()}</div> : null}
+                </div>
             </div>
         )
     }

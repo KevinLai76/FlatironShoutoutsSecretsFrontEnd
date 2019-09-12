@@ -29,9 +29,8 @@ class Dislike extends React.Component {
                 })
             })
             .then(response => response.json())
-            .then(dislike => {
-                this.props.updateDislikes(dislike)
-            })
+            // fix later this will mess up the sort updateDislikes is passed down from Shoutouts
+            // .then(dislike => {this.props.updateDislikes(dislike)})
         } else {
             this.setState({error: true})
             setTimeout(() => this.setState({error: false}), 2000)
@@ -40,7 +39,7 @@ class Dislike extends React.Component {
 
     render() {
         return(
-            <div name='dislikes'>
+            <div className='Shoutouts-Dislikes' name='dislikes'>
                 <button onClick={this.handleClick}>Dislike</button> <small>{this.state.dislikes}</small>
                 {this.state.error ? <div>{this.errorMessage()}</div> : null}
             </div>

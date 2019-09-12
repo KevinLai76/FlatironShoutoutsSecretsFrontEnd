@@ -18,16 +18,16 @@ class CommentContainer extends React.Component {
 
     render() {
         return(
-            <div name='comment_container'>
-                <div name='comments_dropdown' onClick={this.handleClick}>
-                    <small>Comments</small>
+            <div className='Shoutouts-Comment-Container' name='comment_container'>
+                <div className='Shoutouts-Comments-Button' name='comments_dropdown' onClick={this.handleClick}>
+                    <small>Comments 💬</small>
                 </div>
-                <div>
+                <div className='Shoutouts-Comment-Container-Comments'>
                     { 
                         this.state.clicked 
                         ?
                         <div>
-                            <CommentInput shoutout={this.props.shoutout} createNewComment={this.props.createNewComment}/>
+                            <CommentInput shoutout={this.props.shoutout} createNewComment={this.props.createNewComment}/>    
                             {this.renderComment()}
                         </div>
                         :

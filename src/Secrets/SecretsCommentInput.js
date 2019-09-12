@@ -35,10 +35,10 @@ class SecretsCommentInput extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='Secrets-Comment-Input-Container'>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='text' name='comment_input' value={this.state.message} onChange={this.handleChange}/>
-                    <input type='submit'/>
+                    <input className='Secrets-Comment-Input' type='text' name='comment_input' value={this.state.message} onChange={this.handleChange}/>
+                    <input className='Secrets-Comment-Submit' type='submit'/>
                 </form>
             </div>
         )

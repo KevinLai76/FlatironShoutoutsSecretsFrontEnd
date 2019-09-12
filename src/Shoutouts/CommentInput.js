@@ -43,10 +43,10 @@ class CommentInput extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className='Shoutouts-Comment-Input-Container'>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='text' name='comment_input' value={this.state.message} onChange={this.handleChange}/>
-                    <input type='submit' />
+                    <input className='Shoutouts-Comment-Input' type='text' name='comment_input' value={this.state.message} onChange={this.handleChange}/>
+                    <input className='Shoutouts-Comment-Submit' type='submit' />
                 </form>
                 {this.state.error ? <div>{this.errorMessage()}</div> : null}
             </div>

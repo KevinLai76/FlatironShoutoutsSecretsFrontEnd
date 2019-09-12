@@ -31,3 +31,689 @@
     transform: rotate(360deg);
   }
 }
+
+.Form {
+  text-align: center;
+  padding: 5em 0;
+  width: 60%;
+  /* border: 1px #5c5c5c solid; */
+  margin: 3em auto;
+  line-height: 2em;
+}
+
+.Shoutouts-Logo {
+  width: 400px;
+  margin-bottom: 2em;
+}
+
+.Form-Header {
+  color: #3a3a3a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+
+.Input-Label {
+  color: #5c5c5c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11pt;
+  background: transparent
+}
+
+.Form-Input-Field {
+  line-height: 2em;
+  width: 20em;
+  border-radius: 1.9pt;
+  border-width: 1pt;
+}
+
+.Form-Redirect {
+  color: #5c5c5c;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Form-Redirect-Text {
+  color:#00bce1;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline;
+}
+
+.Form-Redirect-Text:hover {
+  filter: brightness(75%);
+}
+
+.Form-Submit-Button {
+  margin-top: 2em;
+  background: #00bce1;
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px 40px 4px;
+  border-radius: 1.9pt;
+}
+
+.Form-Submit-Button:hover {
+  filter: brightness(95%);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Nav-Container {
+  /* border: #282c34 solid; */
+  position: relative;
+}
+
+.Nav-Shoutouts-Logo {
+  width: 300px;
+}
+
+.Nav-Secrets-Logo {
+  border: 1px black solid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 31pt;
+  font-style: italic;
+  word-break: break-all;
+}
+
+.Nav-Shoutouts-Button button {
+  background: #00bce1;
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px 20px 4px;
+  border-radius: 1.9pt;
+  display: inline;
+  margin-right: 1em;
+}
+
+.Nav-Shoutouts-Button button:hover {
+  filter:brightness(95%)
+}
+
+.Nav-Shoutouts-Button {
+  /* float: right;
+  margin-right: 2em;
+  margin-top: 5.5em; */
+  position: absolute;
+  bottom: 1em;
+  right: 0px;
+}
+
+.Nav-Log-Out {
+  background: #00bce1;
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px 20px 4px;
+  border-radius: 1.9pt;
+  display: inline;
+  margin-right: 1em;
+  position: absolute;
+  bottom: 1em;
+  right: 0px;
+}
+
+.Nav-Log-Out:hover {
+  filter: brightness(95%)
+}
+
+.Welcome-Back {
+  color: #5c5c5c;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  bottom: 1em;
+  right: 10em;
+}
+
+.Shoutouts-Page {
+  background: #F8F8F8;
+  color: #5c5c5c;
+}
+
+.Secrets-Page {
+  background: #110C11;
+  color: #605052;
+}
+
+
+/* .Speech-Bubble {
+  position: relative;
+  background: #00bce1;
+  filter: opacity(30%);
+  border-radius: .4em;
+  padding: 20px;
+  width: 20em;
+  height: 10em;
+  margin-top: 2em;
+  margin-left: 40.5%;
+} */
+
+.Shoutouts-Post-Input-Field {
+  width: 80%;
+  margin-top: -3em;
+  margin-right: 2em;
+  margin-bottom: -15em;
+  padding: 0;
+  height: 14em;
+  float: right;
+  border: 1px white solid;
+  filter: opacity(85%);
+  border-radius: .4em;
+  box-shadow: 5px 10px #ececec;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+}
+
+.Secrets-Post-Input-Field {
+  width: 80%;
+  margin-top: -3em;
+  margin-right: 2em;
+  margin-bottom: -15em;
+  padding: 0;
+  height: 14em;
+  float: right;
+  border: 1px white solid;
+  filter: opacity(85%);
+  border-radius: .4em;
+  box-shadow: 5px 10px #ececec;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+}
+
+.Shoutouts-Post-Form {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.Secrets-Post-Form {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.Shoutouts-Post-Form input {
+  margin-top: 12em;
+  margin-left: 5.5em;
+  background: #00bce1;
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px 20px 4px;
+  border-radius: 1.9pt;
+  box-shadow: 3px 5px #ececec;
+}
+
+.Secrets-Post-Form input {
+  margin-top: 12em;
+  margin-left: 5.5em;
+  background: #00bce1;
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px 20px 4px;
+  border-radius: 1.9pt;
+  box-shadow: 3px 5px #ececec;
+}
+
+.Shoutouts-Post-Form input:hover {
+  filter: brightness(95%)
+}
+
+.Secrets-Post-Form input:hover {
+  filter: brightness(95%)
+}
+
+.User-Icon {
+  height: 60px;
+  width: 60px;
+  margin-top: 1em;
+  margin-left: .5em;
+  line-height: 60px;
+  -moz-border-radius: 30px; /* or 50% */
+  border-radius: 30px; /* or 50% */
+  background-color: white;
+  color: white;
+  box-shadow: 2px 2px #ececec;
+}
+
+/* 
+.Speech-Bubble:after {
+  content: '';
+	position: absolute;
+	top: 0;
+	left: 20%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+  border-bottom-color: #00bce1;
+	border-top: 0;
+	border-left: 0;
+	margin-left: -10px;
+  margin-top: -20px;
+} */
+
+.Shoutouts-Post-Container {
+  width: 100%;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px #5c5c5c solid; */
+}
+
+.Secrets-Post-Container {
+  width: 100%;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Shoutouts-Post-Filter {
+  margin-top: 2em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -2px 0px 0px 2px #ececec;
+}
+
+.Secrets-Post-Filter {
+  margin-top: 2em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -2px 0px 0px 2px #ececec;
+}
+
+.Shoutouts-Post-Filter .Shoutouts-Post-Filter-Sort-Label {
+  padding-top: .5em;
+  padding-bottom: .3em;
+  padding-left: 2em;
+  border-left: 1px #ececec solid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  color: #ececec;
+  filter: brightness(70%);
+  margin-right: 1em;
+}
+
+.Secrets-Post-Filter .Secrets-Post-Filter-Sort-Label {
+  padding-top: .5em;
+  padding-bottom: .3em;
+  padding-left: 2em;
+  border-left: 1px #ececec solid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  color: #ececec;
+  filter: brightness(70%);
+  margin-right: 1em;
+}
+
+.Shoutouts-Post-Filter .Shoutouts-Post-Filter-Top-Label {
+  font-size: 10pt;
+  color: #ececec;
+  filter: brightness(40%);
+  margin-right: .2em;
+}
+
+.Secrets-Post-Filter .Secrets-Post-Filter-Top-Label {
+  font-size: 10pt;
+  color: #ececec;
+  filter: brightness(40%);
+  margin-right: .2em;
+}
+
+.Shoutouts-Post-Filter .Shoutouts-Post-Filter-Top-Input {
+  margin-right: 1.5em;
+}
+
+.Secrets-Post-Filter .Secrets-Post-Filter-Top-Input {
+  margin-right: 1.5em;
+}
+
+.Shoutouts-Post-Filter .Shoutouts-Post-Filter-New-Label {
+  font-size: 10pt;
+  color: #ececec;
+  filter: brightness(40%);
+  margin-right: .2em;
+}
+
+.Secrets-Post-Filter .Secrets-Post-Filter-New-Label {
+  font-size: 10pt;
+  color: #ececec;
+  filter: brightness(40%);
+  margin-right: .2em;
+}
+
+.Shoutouts-Post {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  width: 40%;
+  background-color: white;
+  border-radius: 5pt;
+  box-shadow: 5px 10px #ececec;
+}
+
+.Secrets-Post {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  width: 40%;
+  background-color: white;
+  border-radius: 5pt;
+  box-shadow: 5px 10px #ececec;
+}
+
+.Shoutouts-Post-Content {
+  margin-top: 1em;
+  padding-bottom: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20pt;
+  border-bottom: 2px #ececec solid;
+}
+
+.Secrets-Post-Content {
+  margin-top: 1em;
+  padding-bottom: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20pt;
+  border-bottom: 2px #ececec solid;
+}
+
+.Shoutouts-Post-Total-Likes {
+  display: block;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+
+  -moz-border-radius: 40px; /* or 50% */
+  border-radius: 40px; /* or 50% */
+
+  background-color: white;
+  color: #61dafb;
+  box-shadow: 2px 2px #ececec;
+  text-align: center;
+  font-size: 2em;
+
+  height: 100%;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.Secrets-Post-Total-Likes {
+  display: block;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+
+  -moz-border-radius: 40px; /* or 50% */
+  border-radius: 40px; /* or 50% */
+
+  background-color: white;
+  color: #61dafb;
+  box-shadow: 2px 2px #ececec;
+  text-align: center;
+  font-size: 2em;
+
+  height: 100%;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.Shoutouts-Post-Total-Likes h1 {
+  font-size: 35pt;
+}
+
+.Secrets-Post-Total-Likes h1 {
+  font-size: 35pt;
+}
+
+.Shoutouts-Post-Buttons {
+  /* margin-top: 1em; */
+  padding-top: .5em;
+  padding-bottom: .5em;
+  width: 65%;
+  display: inline-flex;
+  border-right: 2px #ececec solid;
+}
+
+.Secrets-Post-Buttons {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  width: 65%;
+  display: inline-flex;
+  border-right: 2px #ececec solid;
+}
+
+.Shoutouts-Likes button{
+  background: #00bce1;
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px 20px 4px;
+  border-radius: 1.9pt;
+  display: inline;
+}
+
+.Secrets-Likes button {
+  background: #00bce1;
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px 20px 4px;
+  border-radius: 1.9pt;
+  display: inline;
+}
+
+.Shoutouts-Likes button:hover {
+  filter: brightness(95%);
+}
+
+.Secrets-Likes button:hover {
+  filter: brightness(95%);
+}
+
+.Shoutouts-Likes small {
+  margin-right: 2.5em;
+  color: #ececec;
+  filter: brightness(70%)
+}
+
+.Secrets-Likes small {
+  margin-right: 2.5em;
+  color: #ececec;
+  filter: brightness(70%)
+}
+
+.Shoutouts-Dislikes button {
+  background: #00bce1;
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px 20px 4px;
+  border-radius: 1.9pt;
+  display: inline;
+}
+
+.Secrets-Dislikes button {
+  background: #00bce1;
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px 20px 4px;
+  border-radius: 1.9pt;
+  display: inline;
+}
+
+.Shoutouts-Dislikes button:hover {
+  filter: brightness(95%);
+}
+
+.Secrets-Dislikes button:hover {
+  filter: brightness(95%);
+}
+
+.Shoutouts-Dislikes small {
+  margin-right: 2em;
+  color: #ececec;
+  filter: brightness(70%)
+}
+
+.Secrets-Dislikes small {
+  margin-right: 2em;
+  color: #ececec;
+  filter: brightness(70%)
+}
+
+.Shoutouts-Comments-Button small {
+  margin-left: 3.5em;
+  color: gray;
+}
+
+.Secrets-Comments-Button small {
+  margin-left: 3.5em;
+  color: gray;
+}
+
+.Shoutouts-Post-Comment-Container-Container {
+  border-top: 2px #ececec solid;
+}
+
+.Secrets-Post-Comment-Container-Container {
+  border-top: 2px #ececec solid;
+}
+
+.Shoutouts-Comment-Container {
+  /* border: 1px black solid; */
+  margin-top: -2.20em;
+}
+
+.Secrets-Comment-Container {
+  margin-top: -2.20em;
+}
+
+.Shoutouts-Comment-Container .Shoutouts-Comments-Button {
+  display: flex;
+  flex-direction: column;
+  margin-left: 13.5em;
+}
+
+.Secrets-Comment-Container .Secrets-Comments-Button {
+  display: flex;
+  flex-direction: column;
+  margin-left: 13.5em;
+}
+
+.Shoutouts-Comment-Input-Container {
+  border-bottom: 2px #ececec solid;
+}
+
+.Secrets-Comment-Input-Container {
+  border-bottom: 2px #ececec solid;
+}
+
+.Shoutouts-Comment-Input-Container form{
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px black solid; */
+}
+
+.Secrets-Comment-Input-Container form {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Shoutouts-Comment-Input-Container .Shoutouts-Comment-Input {
+  width: 60%;
+  border-radius: 2pt;
+  font-size: 12pt;
+  color: #5c5c5c;
+}
+
+.Secrets-Comment-Input-Container .Secrets-Comment-Input {
+  width: 60%;
+  border-radius: 2pt;
+  font-size: 12pt;
+  color: #5c5c5c;
+}
+
+.Shoutouts-Comment-Input-Container .Shoutouts-Comment-Submit {
+  background: #00bce1;
+  color: white;
+  font-size: 10pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2px 10px 2px;
+  border-radius: 2pt;
+
+  margin-top: 1em;
+  margin-right: 21.5em;
+  margin-bottom: 1em;
+}
+
+.Secrets-Comment-Input-Container .Secrets-Comment-Submit {
+  background: #00bce1;
+  color: white;
+  font-size: 10pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2px 10px 2px;
+  border-radius: 2pt;
+
+  margin-top: 1em;
+  margin-right: 21.5em;
+  margin-bottom: 1em;
+}
+
+
+.Shoutouts-Comment-Input-Container .Shoutouts-Comment-Submit:hover {
+  filter: brightness(95%);
+}
+
+.Secrets-Comment-Input-Container .Secrets-Comment-Submit:hover {
+  filter: brightness(95%);
+}
+
+.Shoutouts-Comment {
+  border: 1px #ececec solid;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 3.5em;
+  width: 80%;
+  background-color: white;
+  border-radius: 5pt;
+  box-shadow: 4px 6px #ececec
+}
+
+.Secrets-Comment {
+  border: 1px #ececec solid;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 3.5em;
+  width: 80%;
+  background-color: white;
+  border-radius: 5pt;
+  box-shadow: 4px 6px #ececec
+}
+

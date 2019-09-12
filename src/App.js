@@ -11,7 +11,7 @@ class App extends React.Component {
 
   state = {
     formType: '',
-    secret: false,
+    secret: true,
     currentUserId: 0
   }
 
@@ -69,8 +69,8 @@ class App extends React.Component {
             </div>
           }
         />
-        <Route exact path='/login' render={(routerProps) => <Form {...routerProps} formType={this.state.formType} setCurrentUserId={this.setCurrentUserId}/>} />
-        <Route exact path='/signup' render={(routerProps) => <Form {...routerProps} formType={this.state.formType} setCurrentUserId={this.setCurrentUserId}/>}/>
+        <Route exact path='/login' render={(routerProps) => <Form {...routerProps} formType="Login" setCurrentUserId={this.setCurrentUserId}/>} />
+        <Route exact path='/signup' render={(routerProps) => <Form {...routerProps} formType="Sign Up" setCurrentUserId={this.setCurrentUserId}/>}/>
       </Switch>
     )
   }

@@ -17,31 +17,33 @@ class ShououtsPage extends React.Component {
         this.setState({shoutouts: [...this.state.shoutouts, shoutout]})
     }
 
-    updateDislikes = (dislike) => {
-        let newShoutoutsArray = this.state.shoutouts.map(shoutout => {
-            return (
-                shoutout.id === dislike.shoutout_id
-                ?
-                {...shoutout, shoutout_dislikes: [shoutout.shoutout_dislikes, dislike]}
-                :
-                shoutout
-            )
-        })
-        this.setState({shoutouts: newShoutoutsArray})
-    }
+    // updateLikes/Dislikes is bugged with the sort function
 
-    updateLikes = (like) => {
-        let newShoutoutsArray = this.state.shoutouts.map(shoutout => {
-            return (
-                shoutout.id === like.shoutout_id
-                ?
-                {...shoutout, shoutout_likes: [shoutout.shoutout_likes, like]}
-                :
-                shoutout
-            )
-        })
-        this.setState({shoutouts: newShoutoutsArray})
-    }
+    // updateDislikes = (dislike) => {
+    //     let newShoutoutsArray = this.state.shoutouts.map(shoutout => {
+    //         return (
+    //             shoutout.id === dislike.shoutout_id
+    //             ?
+    //             {...shoutout, shoutout_dislikes: [shoutout.shoutout_dislikes, dislike]}
+    //             :
+    //             shoutout
+    //         )
+    //     })
+    //     this.setState({shoutouts: newShoutoutsArray})
+    // }
+
+    // updateLikes = (like) => {
+    //     let newShoutoutsArray = this.state.shoutouts.map(shoutout => {
+    //         return (
+    //             shoutout.id === like.shoutout_id
+    //             ?
+    //             {...shoutout, shoutout_likes: [shoutout.shoutout_likes, like]}
+    //             :
+    //             shoutout
+    //         )
+    //     })
+    //     this.setState({shoutouts: newShoutoutsArray})
+    // }
 
     createNewComment = (comment) => {
         let newShoutoutsArray = this.state.shoutouts.map(shoutout => {
@@ -58,7 +60,7 @@ class ShououtsPage extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className='Shoutouts-Page'>
                 <ShoutoutsPostContainer shoutouts={this.state.shoutouts} currentUserId={this.props.currentUserId} createNewShoutout={this.createNewShoutout} createNewComment={this.createNewComment} updateLikes={this.updateLikes} updateDislikes={this.updateDislikes}/>
             </div>
         )

@@ -29,7 +29,7 @@ class Like extends React.Component {
                 })
             })
             .then(response => response.json())
-            .then(data => this.props.updateLikes(data))
+            // .then(data => this.props.updateLikes(data))
         } else {
             this.setState({error: true})
             setTimeout(() => this.setState({error:false}), 3000)
@@ -38,9 +38,9 @@ class Like extends React.Component {
 
     render() {
         return(
-            <div name='likes'>
+            <div className='Shoutouts-Likes' name='likes'>
                 <div>
-                    <button onClick={this.handleClick}>Like</button> <small>{this.state.likes}</small>
+                    <button onClick={this.handleClick}>like</button> <small>{this.state.likes}</small>
                     {this.state.error ? <div>{this.errorMessage()}</div> : null}
                 </div>
             </div>

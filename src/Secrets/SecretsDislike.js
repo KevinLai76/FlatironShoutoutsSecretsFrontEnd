@@ -10,7 +10,7 @@ class SecretsDislike extends React.Component {
         if (localStorage.token) {
             this.setState({dislikes: this.state.dislikes + 1})
             this.props.changeTotalDislikes()
-            
+
             fetch('http://localhost:3000/secret_dislikes', {
                 method: 'POST',
                 headers: {
@@ -24,13 +24,13 @@ class SecretsDislike extends React.Component {
                 })
             })
             .then(response => response.json())
-            .then(data => this.props.updateDislikes(data))
+            // .then(data => this.props.updateDislikes(data))
         }
     }
 
     render() {
         return (
-            <div>
+            <div className='Secrets-Dislikes'>
                 <button onClick={this.handleClick}>Dislike</button> <small>{this.state.dislikes}</small>
             </div>
         )

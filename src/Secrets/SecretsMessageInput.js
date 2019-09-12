@@ -1,4 +1,5 @@
 import React from 'react';
+import SecretsIcon from '../Images/secrets icon.png'
 
 class SecretsMessageInput extends React.Component {
 
@@ -35,10 +36,14 @@ class SecretsMessageInput extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type='text' value={this.state.message} onChange={this.handleChange}/>
-                    <input type='submit' />
-                </form>
+                <div className='Secrets-Post-Form'>
+                    <img alt='' className='User-Icon' src={SecretsIcon}/>
+                    <form onSubmit={this.handleSubmit}>
+                        {/* <input type='text' value={this.state.message} onChange={this.handleChange}/> */}
+                        <textarea className='Secrets-Post-Input-Field' type='text' value={this.state.message} onChange={this.handleChange}/>
+                        <input type='submit' />
+                    </form>
+                </div>
             </div>
         )
     }
