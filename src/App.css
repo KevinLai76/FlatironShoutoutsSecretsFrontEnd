@@ -242,6 +242,10 @@
   left: 32px;
 }
 
+.Hidden {
+  visibility: hidden;
+}
+
 .Shoutouts-Switch-Container {
   /* border: 1px black solid; */
   width: 40%;
@@ -343,7 +347,7 @@
 }
 
 .Secrets-Post-Form input {
-  margin-top: 13.1em;
+  margin-top: 13.2em;
   margin-left: 5.5em;
   background: #211a23;
   color: white;
@@ -363,6 +367,11 @@
 
 .Secrets-Post-Form input:hover {
   filter: brightness(95%)
+}
+
+.Shoutouts-Message-Error {
+  color: red;
+  text-align: center;
 }
 
 .User-Icon {
@@ -634,6 +643,11 @@
   filter: brightness(70%)
 }
 
+.Shoutouts-Likes-Error {
+  margin-top: 1em;
+  font-size: 10pt;
+}
+
 .Shoutouts-Dislikes button {
   background: #00bce1;
   color: white;
@@ -675,6 +689,11 @@
   margin-right: 2em;
   color: #ececec;
   filter: brightness(70%)
+}
+
+.Shoutouts-Dislikes-Error {
+  margin-top: 1em;
+  font-size: 10pt;
 }
 
 .Shoutouts-Comments-Button small {
@@ -790,6 +809,12 @@
 
 .Secrets-Comment-Input-Container .Secrets-Comment-Submit:hover {
   filter: brightness(95%);
+}
+
+.Shoutouts-Comment-Input-Container .Comment-Input-Errors {
+  color: red;
+  text-align: center;
+  /* font-size: 9pt; */
 }
 
 .Shoutouts-Comment {
