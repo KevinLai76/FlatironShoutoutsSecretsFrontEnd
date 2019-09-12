@@ -8,17 +8,22 @@ class Toggle extends React.Component {
 
     render() {
         return (
-            <div>
-                {localStorage.token
+            <div className='Shoutouts-Switch-Container'>
+                {
+                localStorage.token
                 ?
-                <label className='Switch'>
-                    <small>{this.props.secret ? 'Turn on the Lights' : 'After Dark'}</small>
-                    <input type="checkbox" onChange={this.handleChange}/>
+                <label className='Shoutouts-Switch'>
+                    <small>{this.props.secret ? 'Turn on the Lights' : 'After Dark'}</small><br/>
+                    <input className='Toggle' type="checkbox" onChange={this.handleChange}/>
                     <span className="slider"></span>
                 </label>
                 :
-                null
-                }
+                <label className='Shoutouts-Switch Hidden'>
+                    <small>{this.props.secret ? 'Turn on the Lights' : 'After Dark'}</small><br/>
+                    <input className='Toggle' type="checkbox" onChange={this.handleChange}/>
+                    <span className="slider"></span>
+                </label>
+                } 
             </div>
         )
     }

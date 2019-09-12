@@ -54,7 +54,7 @@ class ShoutoutsMessageInput extends React.Component {
                         <input value='Post' type='submit'/>
                     </form>
                 </div>
-                <div className='Shoutouts-Error-Message'>
+                <div className='Shoutouts-Message-Error'>
                     {this.state.error ? <div>{this.errorMessage()}</div> : null}
                 </div>
             </div>

@@ -41,7 +41,7 @@ class Like extends React.Component {
             <div className='Shoutouts-Likes' name='likes'>
                 <div>
                     <button onClick={this.handleClick}>like</button> <small>{this.state.likes}</small>
-                    {this.state.error ? <div>{this.errorMessage()}</div> : null}
+                    {this.state.error ? <div className='Shoutouts-Likes-Error'>{this.errorMessage()}</div> : null}
                 </div>
             </div>
         )

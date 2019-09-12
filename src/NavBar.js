@@ -27,7 +27,7 @@ class NavBar extends React.Component {
                     <div className='Nav-Container' name='logged in'>
                         {this.props.secret ? <h1 className='Nav-Secrets-Logo'>Flatiron{<br/>}Secrets</h1> : <img alt='' className='Nav-Shoutouts-Logo' src={ShoutoutsLogo}/>}
                         <small className='Welcome-Back'>Welcome Back!</small>              
-                        <button className='Nav-Log-Out' name="Log Out" onClick={this.handleClick}>Log Out</button>
+                        {this.props.secret ? <button className='Secrets-Nav-Log-Out' name="Log Out" onClick={this.handleClick}>Log Out</button> : <button className='Shoutouts-Nav-Log-Out' name="Log Out" onClick={this.handleClick}>Log Out</button>}
                     </div>
                     :
                     <div className='Nav-Container' name='logged out'> 

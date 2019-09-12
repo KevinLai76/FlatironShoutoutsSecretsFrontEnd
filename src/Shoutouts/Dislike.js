@@ -41,7 +41,7 @@ class Dislike extends React.Component {
         return(
             <div className='Shoutouts-Dislikes' name='dislikes'>
                 <button onClick={this.handleClick}>Dislike</button> <small>{this.state.dislikes}</small>
-                {this.state.error ? <div>{this.errorMessage()}</div> : null}
+                {this.state.error ? <div className='Shoutouts-Dislikes-Error'>{this.errorMessage()}</div> : null}
             </div>
             
         )

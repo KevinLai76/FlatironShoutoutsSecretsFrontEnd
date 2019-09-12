@@ -11,7 +11,7 @@ class App extends React.Component {
 
   state = {
     formType: '',
-    secret: true,
+    secret: false,
     currentUserId: 0
   }
 
@@ -58,14 +58,16 @@ class App extends React.Component {
           exact path='/' 
           render={(routerProps) =>
             <div> 
-              <NavBar {...routerProps} secret={this.state.secret} currentUserId={this.state.currentUserId} handleSignUp={this.handleSignUp} handleLogin={this.handleLogin} handleLogout={this.handleLogout}/>
-              <Toggle {...routerProps} secret={this.state.secret} toggle={this.toggle}/>
-              {this.state.secret
-              ?
-              <SecretsPage {...routerProps} currentUserId={this.state.currentUserId}/>
-              :
-              <ShoutoutsPage {...routerProps} currentUserId={this.state.currentUserId}/>
-              }
+              <div>
+                <NavBar {...routerProps} secret={this.state.secret} currentUserId={this.state.currentUserId} handleSignUp={this.handleSignUp} handleLogin={this.handleLogin} handleLogout={this.handleLogout}/>
+                <Toggle {...routerProps} secret={this.state.secret} toggle={this.toggle}/>
+              </div>
+                {this.state.secret
+                ?
+                <SecretsPage {...routerProps} currentUserId={this.state.currentUserId}/>
+                :
+                <ShoutoutsPage {...routerProps} currentUserId={this.state.currentUserId}/>
+                }
             </div>
           }
         />
