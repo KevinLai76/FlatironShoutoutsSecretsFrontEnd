@@ -20,16 +20,20 @@ class SecretsPost extends React.Component {
 
     render() {
         return(
-            <div>
-                <div name='total_likes'>
+            <div className='Secrets-Post'>
+                <div className='Secrets-Post-Total-Likes' name='total_likes'>
                     <h1>{this.state.likes - this.state.dislikes}</h1>
                 </div>
-                <div name='secrets_post_content'>
+                <div className='Secrets-Post-Content' name='secrets_post_content'>
                     {this.props.secret.content}
                 </div>
-                <SecretsLike secret={this.props.secret} updateLikes={this.props.updateLikes} changeTotalLikes={this.changeTotalLikes}/>
-                <SecretsDislike secret={this.props.secret} updateDislikes={this.props.updateDislikes} changeTotalDislikes={this.changeTotalDislikes}/>
-                <SecretsCommentContainer secret={this.props.secret} createNewComment={this.props.createNewComment}/>
+                <div className='Secrets-Post-Buttons'>
+                    <SecretsLike secret={this.props.secret} updateLikes={this.props.updateLikes} changeTotalLikes={this.changeTotalLikes}/>
+                    <SecretsDislike secret={this.props.secret} updateDislikes={this.props.updateDislikes} changeTotalDislikes={this.changeTotalDislikes}/>
+                </div>
+                <div className='Secrets-Post-Comment-Container-Container'>
+                    <SecretsCommentContainer secret={this.props.secret} createNewComment={this.props.createNewComment}/>
+                </div>
             </div>
         )
     }

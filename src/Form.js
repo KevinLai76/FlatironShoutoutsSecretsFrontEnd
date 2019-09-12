@@ -1,4 +1,5 @@
 import React from 'react';
+import ShoutoutsLogo from './Images/flatironshoutouts.jpg'
 import './App.css';
 
 class Form extends React.Component {
@@ -19,21 +20,23 @@ class Form extends React.Component {
         if (!!data.error) { 
             this.setState({signupErrors: false})
             this.setState({loginErrors: true})
+            setTimeout(() => this.setState({loginErrors: false}), 5000)
             return null
         } else if (!!data.errors) {
             this.setState({loginErrors: false})
             this.setState({signupErrors: true})
+            setTimeout(() => this.setState({signupErrors: false}), 5000)
             return null
         } else {
             this.setState({loginErrors: false})
             this.setState({signupErrors: false})
             localStorage.setItem('token', data.token)
-            this.updateCurrentUser(data)
+            this.updateCurrentUser()
             this.props.history.push('/')
         }
     }
 
-    updateCurrentUser = (data) => {
+    updateCurrentUser = () => {
         fetch('http://localhost:3000/profile', {
          headers: {
            'Authorization': localStorage.token
@@ -76,22 +79,25 @@ class Form extends React.Component {
 
     render() {
         return(
-            <div>
-                <h1>{this.state.page}</h1>
+            <div className='Form'>
+                <img alt='' className='Shoutouts-Logo' src={ShoutoutsLogo} />
+                <h1 className='Form-Header'>{this.state.page}</h1>
                 {this.state.loginErrors ? <small>Incorrect username or password</small> : null}
-                {this.state.signupErrors ? <small>Invalid username</small> : null}
+                {this.state.signupErrors ? <small>That username is already taken</small> : null}
                 <form>
-                    <input type='text' name='username' value={this.state.username} onChange={this.handleChange}/>
-                    <input type='password' name='password' value={this.state.password} onChange={this.handleChange}/>
+                    <label className='Input-Label' name='login'>Username: </label><br/>
+                    <input type='text' className='Form-Input-Field' name='username' value={this.state.username} onChange={this.handleChange}/><br/>
+                    <label className='Input-Label'>Password: </label><br/>
+                    <input type='password' className='Form-Input-Field' name='password' value={this.state.password} onChange={this.handleChange}/><br/>
                     {
                         this.state.page === 'Login'
                         ?
-                        <input type='submit' value='Login' name='login' onClick={this.handleSubmit}/>
+                        <input type='submit' value='Login' className='Form-Submit-Button' name='login' onClick={this.handleSubmit}/>
                         :
-                        <input type='submit' value='Sign Up' name='signup' onClick={this.handleSubmit}/>
+                        <input type='submit' value='Sign Up' className='Form-Submit-Button' name='signup' onClick={this.handleSubmit}/>
                     }
                 </form>
-                <small onClick={this.handleClick}>{`click here to ${this.state.page === 'Login' ? 'Sign Up' : 'Login'}`}</small>
+                <small className='Form-Redirect' onClick={this.handleClick}>click here to <div className='Form-Redirect-Text'>{this.state.page === 'Login' ? 'Sign Up' : 'Login'}</div></small>
             </div>
         )
     }

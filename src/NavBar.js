@@ -1,4 +1,7 @@
 import React from 'react';
+import ShoutoutsLogo from './Images/flatironshoutouts.jpg'
+import './App.css';
+
 
 class NavBar extends React.Component {
 
@@ -21,16 +24,18 @@ class NavBar extends React.Component {
                 {
                     this.props.currentUserId
                     ?
-                    <div name='logged in'>
-                        <h1>Flatiron {this.props.secret ? 'Secrets' : 'Shoutouts'}</h1>
-                        <small>Welcome Back!</small>              
-                        <button name="Log Out" onClick={this.handleClick}>Log Out</button>
+                    <div className='Nav-Container' name='logged in'>
+                        {this.props.secret ? <h1 className='Nav-Secrets-Logo'>Flatiron{<br/>}Secrets</h1> : <img alt='' className='Nav-Shoutouts-Logo' src={ShoutoutsLogo}/>}
+                        <small className='Welcome-Back'>Welcome Back!</small>              
+                        <button className='Nav-Log-Out' name="Log Out" onClick={this.handleClick}>Log Out</button>
                     </div>
                     :
-                    <div name='logged out'> 
-                        <h1>Flatiron Shoutouts</h1>
-                        <button name="Login" onClick={this.handleClick}>Login</button>
-                        <button name="Sign Up" onClick={this.handleClick}>Sign Up</button>
+                    <div className='Nav-Container' name='logged out'> 
+                        <img alt='' className='Nav-Shoutouts-Logo' src={ShoutoutsLogo}/>
+                        <div className='Nav-Shoutouts-Button'>
+                            <button className='Nav-Shoutouts-Login' name="Login" onClick={this.handleClick}>Login</button>
+                            <button className='Nav-Shoutouts-Sign-Up' name="Sign Up" onClick={this.handleClick}>Sign Up</button>
+                        </div>
                     </div>
                 }
             </div>

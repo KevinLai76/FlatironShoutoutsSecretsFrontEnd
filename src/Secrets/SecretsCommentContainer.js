@@ -18,11 +18,11 @@ class SecretsCommentContainer extends React.Component {
 
     render() {
         return (
-            <div name='comment_container'>
-                <div name='comments_dropdown' onClick={this.handleClick}>
-                    <small>Comments</small>
+            <div className='Secrets-Comment-Container' name='comment_container'>
+                <div className='Secrets-Comments-Button' name='comments_dropdown' onClick={this.handleClick}>
+                    <small>Comments 💬</small>
                 </div>
-                <div>
+                <div className='Secrets-Comment-Container-Comments'>
                     {
                         this.state.clicked
                         ?

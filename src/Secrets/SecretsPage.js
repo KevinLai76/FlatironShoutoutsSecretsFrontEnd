@@ -17,31 +17,31 @@ class SecretPage extends React.Component {
         this.setState({secrets: [...this.state.secrets, secret]})
     }
 
-    updateDislikes = (dislike) => {
-        let newSecretsArray = this.state.secrets.map(secret => {
-            return (
-                secret.id === dislike.secret_id
-                ?
-                {...secret, secret_dislikes: [secret.secret_dislikes, dislike]}
-                :
-                secret
-                )
-        })
-        this.setState({secrets: newSecretsArray})
-    }
+    // updateDislikes = (dislike) => {
+    //     let newSecretsArray = this.state.secrets.map(secret => {
+    //         return (
+    //             secret.id === dislike.secret_id
+    //             ?
+    //             {...secret, secret_dislikes: [secret.secret_dislikes, dislike]}
+    //             :
+    //             secret
+    //             )
+    //     })
+    //     this.setState({secrets: newSecretsArray})
+    // }
 
-    updateLikes = (like) => {
-        let newSecretsArray = this.state.secrets.map(secret => {
-            return(
-                secret.id === like.secret_id
-                ?
-                {...secret, secret_likes: [secret.secret_likes, like]}
-                :
-                secret
-            )
-        })
-        this.setState({secrets: newSecretsArray})
-    }
+    // updateLikes = (like) => {
+    //     let newSecretsArray = this.state.secrets.map(secret => {
+    //         return(
+    //             secret.id === like.secret_id
+    //             ?
+    //             {...secret, secret_likes: [secret.secret_likes, like]}
+    //             :
+    //             secret
+    //         )
+    //     })
+    //     this.setState({secrets: newSecretsArray})
+    // }
 
     createNewComment = (comment) => {
         let newSecretsArray = this.state.secrets.map(secret => {
@@ -58,7 +58,7 @@ class SecretPage extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className='Secrets-Page'>
                 <SecretsPostContainer secrets={this.state.secrets} currentUserId={this.props.currentUserId} createNewSecret={this.createNewSecret} updateLikes={this.updateLikes} updateDislikes={this.updateDislikes} createNewComment={this.createNewComment}/>
             </div>
         )

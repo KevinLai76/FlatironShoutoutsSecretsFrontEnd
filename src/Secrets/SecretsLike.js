@@ -24,13 +24,13 @@ class SecretsLike extends React.Component {
                 })
             })
             .then(response => response.json())
-            .then(data => this.props.updateLikes(data))
+            // .then(data => this.props.updateLikes(data))
         }
     }       
 
     render() {
         return (
-            <div>
+            <div className='Secrets-Likes'>
                 <button onClick={this.handleClick}>Like</button> <small>{this.state.likes}</small>
             </div>
         )

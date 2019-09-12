@@ -11,7 +11,7 @@ class Toggle extends React.Component {
             <div>
                 {localStorage.token
                 ?
-                <label className="switch">
+                <label className='Switch'>
                     <small>{this.props.secret ? 'Turn on the Lights' : 'After Dark'}</small>
                     <input type="checkbox" onChange={this.handleChange}/>
                     <span className="slider"></span>
