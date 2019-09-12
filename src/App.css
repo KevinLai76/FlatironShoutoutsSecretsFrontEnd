@@ -103,15 +103,21 @@
 }
 
 .Nav-Shoutouts-Logo {
+  padding-right: 5em;
+  border-right: 1px #ececec solid;
   width: 300px;
 }
 
 .Nav-Secrets-Logo {
-  border: 1px black solid;
+  border-right: 1px #ececec solid;
+  width: 26.4%;
+  margin-top: 0;
+  margin-bottom: 0px;
+  padding-top: .32em;
+  /* padding-bottom: 14px; */
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 31pt;
+  font-size: 35pt;
   font-style: italic;
-  word-break: break-all;
 }
 
 .Nav-Shoutouts-Button button {
@@ -139,7 +145,7 @@
   right: 0px;
 }
 
-.Nav-Log-Out {
+.Shoutouts-Nav-Log-Out {
   background: #00bce1;
   color: white;
   font-size: 11pt;
@@ -154,9 +160,29 @@
   right: 0px;
 }
 
-.Nav-Log-Out:hover {
+.Shoutouts-Nav-Log-Out:hover {
   filter: brightness(95%)
 }
+
+.Secrets-Nav-Log-Out {
+  background: #211a23;
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px 20px 4px;
+  border-radius: 1.9pt;
+  display: inline;
+  margin-right: 1em;
+  position: absolute;
+  bottom: 1em;
+  right: 0px;
+}
+
+.Secrets-Nav-Log-Out:hover {
+  filter: brightness(95%)
+}
+
 
 .Welcome-Back {
   color: #5c5c5c;
@@ -168,6 +194,73 @@
   right: 10em;
 }
 
+.Toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 62px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #00bce1;
+  transition: background-color ease 0.3s;
+}
+
+.Toggle:before {
+  content: "off on";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  font: 10px/28px Helvetica;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-indent: -22px;
+  word-spacing: 37px;
+  color: #fff;
+  text-shadow: -1px -1px rgba(0,0,0,0.15);
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+}
+
+.Toggle:checked {
+  background-color: #211a23;
+}
+
+.Toggle:checked:before {
+  left: 32px;
+}
+
+.Shoutouts-Switch-Container {
+  /* border: 1px black solid; */
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-top: -3.9em;
+}
+
+.Shoutouts-Switch {
+  /* border: 1px black solid; */
+  margin-left: 27em;
+  z-index: 0;
+}
+
+.Shoutouts-Switch small {
+  margin-left: 1.25em;
+  font-size: 7pt;
+}
+
 .Shoutouts-Page {
   background: #F8F8F8;
   color: #5c5c5c;
@@ -176,6 +269,7 @@
 .Secrets-Page {
   background: #110C11;
   color: #605052;
+  font-style: italic;
 }
 
 
@@ -215,12 +309,14 @@
   padding: 0;
   height: 14em;
   float: right;
-  border: 1px white solid;
+  border: 1px white	 solid;
+  background: white;
   filter: opacity(85%);
   border-radius: .4em;
-  box-shadow: 5px 10px #ececec;
+  box-shadow: 5px 10px #5c5c5c;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12pt;
+  font-style: italic;
 }
 
 .Shoutouts-Post-Form {
@@ -247,16 +343,18 @@
 }
 
 .Secrets-Post-Form input {
-  margin-top: 12em;
+  margin-top: 13.1em;
   margin-left: 5.5em;
-  background: #00bce1;
+  background: #211a23;
   color: white;
+  filter: opacity(85%);
   font-size: 11pt;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
   padding: 4px 20px 4px;
   border-radius: 1.9pt;
-  box-shadow: 3px 5px #ececec;
+  box-shadow: 3px 5px #5c5c5c;
 }
 
 .Shoutouts-Post-Form input:hover {
@@ -407,8 +505,9 @@
   margin-bottom: 2em;
   width: 40%;
   background-color: white;
+  filter: opacity(85%);
   border-radius: 5pt;
-  box-shadow: 5px 10px #ececec;
+  box-shadow: 5px 10px #5c5c5c;
 }
 
 .Shoutouts-Post-Content {
@@ -457,8 +556,8 @@
   border-radius: 40px; /* or 50% */
 
   background-color: white;
-  color: #61dafb;
-  box-shadow: 2px 2px #ececec;
+  color: #211a23;
+  box-shadow: 2px 2px #5c5c5c;
   text-align: center;
   font-size: 2em;
 
@@ -504,10 +603,11 @@
 }
 
 .Secrets-Likes button {
-  background: #00bce1;
+  background: #211a23;
   color: white;
   font-size: 11pt;
   font-weight: bold;
+  font-style: italic;
   font-family: Arial, Helvetica, sans-serif;
   padding: 4px 20px 4px;
   border-radius: 1.9pt;
@@ -546,10 +646,11 @@
 }
 
 .Secrets-Dislikes button {
-  background: #00bce1;
+  background: #211a23;
   color: white;
   font-size: 11pt;
   font-weight: bold;
+  font-style: italic;
   font-family: Arial, Helvetica, sans-serif;
   padding: 4px 20px 4px;
   border-radius: 1.9pt;
@@ -649,6 +750,7 @@
   width: 60%;
   border-radius: 2pt;
   font-size: 12pt;
+  font-style: italic;
   color: #5c5c5c;
 }
 
@@ -662,21 +764,22 @@
   border-radius: 2pt;
 
   margin-top: 1em;
-  margin-right: 21.5em;
+  margin-right: 22.75em;
   margin-bottom: 1em;
 }
 
 .Secrets-Comment-Input-Container .Secrets-Comment-Submit {
-  background: #00bce1;
+  background: #211a23;
   color: white;
   font-size: 10pt;
   font-weight: bold;
+  font-style: italic;
   font-family: Arial, Helvetica, sans-serif;
   padding: 2px 10px 2px;
   border-radius: 2pt;
 
   margin-top: 1em;
-  margin-right: 21.5em;
+  margin-right: 22.75em;
   margin-bottom: 1em;
 }
 
@@ -714,6 +817,6 @@
   width: 80%;
   background-color: white;
   border-radius: 5pt;
-  box-shadow: 4px 6px #ececec
+  box-shadow: 4px 6px #5c5c5c
 }
 

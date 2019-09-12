@@ -11,7 +11,7 @@ class App extends React.Component {
 
   state = {
     formType: '',
-    secret: true,
+    secret: false,
     currentUserId: 0
   }
 

@@ -38,7 +38,7 @@ class SecretsCommentInput extends React.Component {
             <div className='Secrets-Comment-Input-Container'>
                 <form onSubmit={this.handleSubmit}>
                     <input className='Secrets-Comment-Input' type='text' name='comment_input' value={this.state.message} onChange={this.handleChange}/>
-                    <input className='Secrets-Comment-Submit' type='submit'/>
+                    <input className='Secrets-Comment-Submit' value='Post' type='submit'/>
                 </form>
             </div>
         )

@@ -41,7 +41,7 @@ class SecretsMessageInput extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         {/* <input type='text' value={this.state.message} onChange={this.handleChange}/> */}
                         <textarea className='Secrets-Post-Input-Field' type='text' value={this.state.message} onChange={this.handleChange}/>
-                        <input type='submit' />
+                        <input type='submit' value='Post' />
                     </form>
                 </div>
             </div>
