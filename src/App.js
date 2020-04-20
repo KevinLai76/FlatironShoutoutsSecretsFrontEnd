@@ -39,6 +39,7 @@ class App extends React.Component {
   }
 
   handleLogout = () => {
+    this.setState({secret: false})
     this.setState({currentUserId: 0})
   }
 
