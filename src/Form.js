@@ -32,6 +32,7 @@ class Form extends React.Component {
             this.setState({signupErrors: false})
             localStorage.setItem('token', data.token)
             this.updateCurrentUser()
+            console.log(this.props.history)
             this.props.history.push('/')
         }
     }
